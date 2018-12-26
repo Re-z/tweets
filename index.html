@@ -12,31 +12,47 @@
     textarea {
         resize: none
     }
+    .tweets__item {
+        padding-right: 45px;
+        position: relative;
+    }
+    .tweets__close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        background: url(close.svg) center center no-repeat;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+    }
+    
 </style>
 
 <body>
-    <header class="container">
-        <div class="row pt-5 pb-5 text-center">
-            <h1>Local Storage</h2>
-        </div>
-    </header>
+    <div class="container text-center mt-5">
+        <h1>Locale Storage Tweets</h1>
+    </div>
     <main class="container">
         <div class="row justify-content-between">
-            <div class="col-lg-5">
+            <div class="col-lg-5 mt-5 mb-5">
                 <h2>Tweet</h2>
                 <form id="tweetForm">
-                    <textarea type="text" id="tweetContent" class="form-control mt-3" cols="20" rows="4" placeholder="Write something here"></textarea>
-                    <input type="submit" id="addTweet" class="btn btn-primary mt-3 col-md-12" value="Add a post">
+                    <textarea type="text" id="tweetContent" class="form-control mt-3" cols="20" rows="4" placeholder="Write your tweet here"></textarea>
+                    <input type="submit" id="addTweet" class="btn btn-primary mt-3 col-md-12" value="Add tweet">
+                    <button id="localStorageCleaner" class="btn btn-warning col-md-12">Clear Local Storage</button>
                 </form>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 mt-5 mb-5">
                 <h2>My Tweets</h2>
-                <ul id="tweetsList" class="list-group">
 
+                <ul id="tweetsList" class="list-group tweets">
+                    <!-- items are going to be rendered here -->
                 </ul>
+
             </div>
         </div>
     </main>
+
 
     <script src="app.js"></script>
 
